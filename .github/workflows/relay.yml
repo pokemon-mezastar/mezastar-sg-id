@@ -1,0 +1,17 @@
+name: Remote Trigger Relay
+
+on:
+  repository_dispatch:
+    types: [remote_trigger_scraper]
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake up Private Scraper
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: bearer ${{ secrets.HIDDEN_SCRAPER_TOKEN }}" \
+            https://api.github.com/repos/CyberDefenderDavid/mezastar-scraper-vn/actions/workflows/run_scraper.yml/dispatches \
+            -d '{"ref":"main"}'
