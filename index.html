@@ -166,46 +166,39 @@
         }
     }
 
-    // Secure Form-Relay Trigger Call (Circumvents CORS & Keeps Identity Hidden)
-    function triggerScraper() {
+    // Clean JavaScript API request to execute the organization's repository relay
+    async function triggerScraper() {
         const btn = document.getElementById('runScraperBtn');
         btn.disabled = true;
         btn.innerText = "⏳ Signaling Scraper to Start...";
         btn.style.backgroundColor = "#9ca3af";
 
-        // Dynamically build a hidden HTML form to submit across cross-origin domains safely
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'https://api.github.com/repos/pokemon-mezastar/mezastar-vn-id/dispatches';
-        form.target = 'hidden_iframe'; // Prevents the webpage from jumping away or reloading
+        try {
+            // Fires an anonymous trigger directly to your public organization repository dispatch engine
+            const response = await fetch('https://api.github.com/repos/pokemon-mezastar/mezastar-vn-id/dispatches', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/vnd.github+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    event_type: 'remote_trigger_scraper'
+                })
+            });
 
-        // Add the JSON event payload required by your relay.yml listener
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'event_type';
-        input.value = 'remote_trigger_scraper';
-        form.appendChild(input);
-
-        // Create a temporary hidden iframe so the request processes silently in the background
-        let iframe = document.getElementById('hidden_iframe');
-        if (!iframe) {
-            iframe = document.createElement('iframe');
-            iframe.id = 'hidden_iframe';
-            iframe.name = 'hidden_iframe';
-            iframe.style.display = 'none';
-            document.body.appendChild(iframe);
+            // If GitHub acknowledges receipt, we indicate immediate success
+            if (response.ok || response.status === 204 || response.status === 202) {
+                btn.innerText = "✅ Scraper Triggered Successfully! (Takes ~2 mins)";
+                btn.style.backgroundColor = "#059669";
+            } else {
+                throw new Error(`API Activation Rejected: Status ${response.status}`);
+            }
+        } catch (error) {
+            console.error(error);
+            btn.innerText = "❌ Activation Failed. Try again.";
+            btn.style.backgroundColor = "#dc2626";
+            btn.disabled = false;
         }
-
-        // Submit the form execution pipeline
-        document.body.appendChild(form);
-        form.submit();
-
-        // Clean up elements from the document tree
-        setTimeout(() => {
-            form.remove();
-            btn.innerText = "✅ Scraper Triggered Successfully! (Takes ~2 mins)";
-            btn.style.backgroundColor = "#059669";
-        }, 1000);
     }
 
     function filterTable() {
