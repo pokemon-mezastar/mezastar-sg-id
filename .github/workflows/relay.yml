@@ -3,6 +3,7 @@ name: Remote Trigger Relay
 on:
   repository_dispatch:
     types: [remote_trigger_scraper]
+  workflow_dispatch: # ◄ This line adds the manual "Run workflow" button!
 
 jobs:
   relay:
