@@ -59,7 +59,7 @@
             font-size: 16px;
             border: 2px solid #e2e8f0;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-sizing: border-box;
             outline: none;
             transition: border-color 0.2s;
@@ -67,6 +67,34 @@
         #search:focus {
             border-color: #3b82f6;
         }
+        
+        /* New Filter Buttons styling */
+        .filter-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .filter-btn {
+            background-color: #f1f5f9;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            padding: 8px 14px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover {
+            background-color: #e2e8f0;
+        }
+        .filter-btn.active {
+            background-color: #3b82f6;
+            color: white;
+            border-color: #2563eb;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -112,7 +140,15 @@
     
     <button id="runScraperBtn" onclick="triggerScraper()">🚀 Force Run Mezastar Scraper Now</button>
     
-    <input type="text" id="search" placeholder="🔍 Search by Ticket ID..." onkeyup="filterTable()">
+    <input type="text" id="search" placeholder="🔍 Search by Ticket ID..." onkeyup="applyFilters()">
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="setPatternFilter('all', this)">All IDs</button>
+        <button class="filter-btn" onclick="setPatternFilter('pair', this)">Pairs (AA)</button>
+        <button class="filter-btn" onclick="setPatternFilter('trips', this)">3 of a Kind (AAA)</button>
+        <button class="filter-btn" onclick="setPatternFilter('straight', this)">Straights (123/345)</button>
+        <button class="filter-btn" onclick="setPatternFilter('lucky', this)">Lucky Digits (6 & 8)</button>
+    </div>
 
     <table id="logTable">
         <thead>
@@ -127,13 +163,16 @@
 </div>
 
 <script>
+    let currentPatternFilter = 'all';
+
     async function loadLogs() {
         try {
             const response = await fetch('scraper_log.txt');
             if (!response.ok) throw new Error('Log file not found yet');
             
             const text = await response.text();
-            const regex = /\[(.*?)\]\s+Scraped ID:\s+(VN_\d+)/g;
+            // Match logic adjusted to pull log patterns safely
+            const regex = /\[(.*?)\]\s+.*Scraped ID:\s+(VN_\d+)/g;
             let match;
             
             const uniqueEntries = new Map();
@@ -159,10 +198,77 @@
             });
 
             document.getElementById('statsCounter').innerText = `📊 Total Unique Tickets Found: ${uniqueEntries.size}`;
+            applyFilters(); // Apply current configurations immediately after download
 
         } catch (error) {
             console.error('Error loading log data:', error);
             document.getElementById('statsCounter').innerText = "💡 Waiting for the first log push from your scraper...";
+        }
+    }
+
+    // Pattern categorization engine
+    function matchesPattern(idString, pattern) {
+        const numbersOnly = idString.replace(/\D/g, ''); // Pull pure 10 digits
+        if (!numbersOnly) return false;
+
+        switch(pattern) {
+            case 'pair':
+                // Finds matching repeating pairs like 11, 22, 55
+                return /(\d)\1/.test(numbersOnly);
+            case 'trips':
+                // Finds 3-of-a-kind blocks like 777 or 000
+                return /(\d)\1\1/.test(numbersOnly);
+            case 'straight':
+                // Checks for 3-digit incrementing or decrementing scales
+                for (let i = 0; i < numbersOnly.length - 2; i++) {
+                    const n1 = parseInt(numbersOnly[i]);
+                    const n2 = parseInt(numbersOnly[i+1]);
+                    const n3 = parseInt(numbersOnly[i+2]);
+                    if ((n2 === n1 + 1 && n3 === n2 + 1) || (n2 === n1 - 1 && n3 === n2 - 1)) {
+                        return true;
+                    }
+                }
+                return false;
+            case 'lucky':
+                // Checks if ticket contains oriental luck targets: 6 or 8
+                return numbersOnly.includes('6') || numbersOnly.includes('8');
+            default:
+                return true;
+        }
+    }
+
+    function setPatternFilter(pattern, element) {
+        currentPatternFilter = pattern;
+        
+        // Handle Active Button Layouts
+        const buttons = document.getElementsByClassName('filter-btn');
+        for (let btn of buttons) {
+            btn.classList.remove('active');
+        }
+        element.classList.add('active');
+        
+        applyFilters();
+    }
+
+    // Unified UI view handling combined logic filtering
+    function applyFilters() {
+        const searchInput = document.getElementById('search').value.toUpperCase();
+        const rows = document.getElementById('tableBody').getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            const idCell = rows[i].getElementsByTagName('td')[1];
+            if (idCell) {
+                const txtValue = idCell.textContent || idCell.innerText;
+                
+                const matchesSearch = txtValue.toUpperCase().indexOf(searchInput) > -1;
+                const matchesBtnPattern = matchesPattern(txtValue, currentPatternFilter);
+
+                if (matchesSearch && matchesBtnPattern) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
         }
     }
 
@@ -195,25 +301,6 @@
             btn.innerText = "❌ Activation Failed. Try again.";
             btn.style.backgroundColor = "#dc2626";
             btn.disabled = false;
-        }
-    }
-
-    // Updated filtering logic to look specifically at the Ticket ID cell
-    function filterTable() {
-        const input = document.getElementById('search').value.toUpperCase();
-        const rows = document.getElementById('tableBody').getElementsByTagName('tr');
-
-        for (let i = 0; i < rows.length; i++) {
-            // Get the second column cell (index 1), which contains the Ticket ID
-            const idCell = rows[i].getElementsByTagName('td')[1];
-            if (idCell) {
-                const txtValue = idCell.textContent || idCell.innerText;
-                if (txtValue.toUpperCase().indexOf(input) > -1) {
-                    rows[i].style.display = "";
-                } else {
-                    rows[i].style.display = "none";
-                }
-            }
         }
     }
 
