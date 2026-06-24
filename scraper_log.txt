@@ -1604,3 +1604,323 @@
 [2026-06-22T19:21:37.000Z] Scraped ID: SG_3257422985 -> tickets/SG_3257422985.png
 [2026-06-22T19:21:43.000Z] Scraped ID: SG_3240645769 -> tickets/SG_3240645769.png
 [2026-06-22T19:21:47.000Z] Scraped ID: SG_3265811593 -> tickets/SG_3265811593.png
+[2026-06-24T20:35:06.332Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3219748553</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:13.044Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3211359945</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:20.129Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3261691593</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:27.507Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3202962633</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:34.609Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3253294281</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:05.779Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3244922569</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:12.648Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3228137161</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:19.896Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3236525769</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:27.131Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3219739849</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:34.381Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3211351241</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:36.416Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3236517065</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:43.286Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3261682889</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:50.150Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3244905673</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:57.005Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3219731657</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:36:03.864Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3202954441</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:05.170Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3261699785</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:12.419Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3202971337</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:19.221Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3253302985</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:26.671Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3244914377</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
+[2026-06-24T20:35:33.855Z] ERROR: locator.waitFor: Error: strict mode violation: locator('text=/(VN|SG|ID|PH|MY)/') resolved to 13 elements:
+    1) <p class="qr-d-pc">…</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    2) <p class="qr-d-sp">Create your Trainer ID</p> aka getByRole('link', { name: 'Create your Trainer ID' })
+    3) <span>…</span> aka getByRole('heading', { name: 'Create your Trainer ID' }).locator('span')
+    4) <p class="id-create-content_heding_title animTrigger add-animate">…</p> aka getByText('Don’t forget to')
+    5) <p class="id-create_cont_card_title">Trainer ID</p> aka getByText('Trainer ID', { exact: true })
+    6) <p class="animTrigger add-animate">(SG)</p> aka getByText('(SG)')
+    7) <p class="animTrigger add-animate">ID: 3228128457</p> aka getByText('ID:')
+    8) <span>If you need a different Trainer ID, click here</span> aka getByRole('link', { name: 'If you need a different' })
+    9) <p class="animTrigger add-animate">- Once you create your Trainer ID, take a screens…</p> aka getByText('- Once you create your')
+    10) <p class="animTrigger add-animate">…</p> aka getByText('- If you lose your Trainer ID')
+    ...
+
+Call log:
+  - waiting for locator('text=/(VN|SG|ID|PH|MY)/') to be visible
+
