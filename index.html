@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokémon Mezastar ID Dashboard</title>
+    <title>Pokémon Mezastar SG ID Dashboard</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -68,7 +68,6 @@
             border-color: #3b82f6;
         }
         
-        /* New Filter Buttons styling */
         .filter-container {
             display: flex;
             gap: 8px;
@@ -134,11 +133,11 @@
 <body>
 
 <div class="container">
-    <h1>Pokémon Mezastar VN Live Dashboard</h1>
+    <h1>Pokémon Mezastar SG Live Dashboard</h1>
     
     <div id="statsCounter" class="stats">🔄 Reading log database...</div>
     
-    <button id="runScraperBtn" onclick="triggerScraper()">🚀 Force Run Mezastar Scraper Now</button>
+    <button id="runScraperBtn" onclick="triggerScraper()">🚀 Force Run SG Mezastar Scraper Now</button>
     
     <input type="text" id="search" placeholder="🔍 Search by Ticket ID..." onkeyup="applyFilters()">
 
@@ -153,7 +152,7 @@
     <table id="logTable">
         <thead>
             <tr>
-                <th>Timestamp (UTC)</th>
+                <th>Timestamp (SGT)</th>
                 <th>Ticket ID</th>
             </tr>
         </thead>
@@ -171,8 +170,8 @@
             if (!response.ok) throw new Error('Log file not found yet');
             
             const text = await response.text();
-            // Match logic adjusted to pull log patterns safely
-            const regex = /\[(.*?)\]\s+.*Scraped ID:\s+(VN_\d+)/g;
+            // Regex handles the SG prefix variant
+            const regex = /\[(.*?)\]\s+.*Scraped ID:\s+(SG_\d+)/g;
             let match;
             
             const uniqueEntries = new Map();
@@ -189,16 +188,24 @@
             const sortedEntries = Array.from(uniqueEntries.entries()).sort((a, b) => new Date(b[1]) - new Date(a[1]));
 
             sortedEntries.forEach(([ticketId, timestamp]) => {
+                // Formatting original raw time string to SGT (Asia/Singapore)
+                const date = new Date(timestamp);
+                const sgTime = date.toLocaleString('en-SG', { 
+                    timeZone: 'Asia/Singapore',
+                    dateStyle: 'medium',
+                    timeStyle: 'medium'
+                });
+
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td class="timestamp">${timestamp}</td>
+                    <td class="timestamp">${sgTime}</td>
                     <td><span class="id-badge">${ticketId}</span></td>
                 `;
                 tableBody.appendChild(row);
             });
 
             document.getElementById('statsCounter').innerText = `📊 Total Unique Tickets Found: ${uniqueEntries.size}`;
-            applyFilters(); // Apply current configurations immediately after download
+            applyFilters();
 
         } catch (error) {
             console.error('Error loading log data:', error);
@@ -206,20 +213,16 @@
         }
     }
 
-    // Pattern categorization engine
     function matchesPattern(idString, pattern) {
-        const numbersOnly = idString.replace(/\D/g, ''); // Pull pure 10 digits
+        const numbersOnly = idString.replace(/\D/g, ''); 
         if (!numbersOnly) return false;
 
         switch(pattern) {
             case 'pair':
-                // Finds matching repeating pairs like 11, 22, 55
                 return /(\d)\1/.test(numbersOnly);
             case 'trips':
-                // Finds 3-of-a-kind blocks like 777 or 000
                 return /(\d)\1\1/.test(numbersOnly);
             case 'straight':
-                // Checks for 3-digit incrementing or decrementing scales
                 for (let i = 0; i < numbersOnly.length - 2; i++) {
                     const n1 = parseInt(numbersOnly[i]);
                     const n2 = parseInt(numbersOnly[i+1]);
@@ -230,7 +233,6 @@
                 }
                 return false;
             case 'lucky':
-                // Checks if ticket contains oriental luck targets: 6 or 8
                 return numbersOnly.includes('6') || numbersOnly.includes('8');
             default:
                 return true;
@@ -240,7 +242,6 @@
     function setPatternFilter(pattern, element) {
         currentPatternFilter = pattern;
         
-        // Handle Active Button Layouts
         const buttons = document.getElementsByClassName('filter-btn');
         for (let btn of buttons) {
             btn.classList.remove('active');
@@ -250,7 +251,6 @@
         applyFilters();
     }
 
-    // Unified UI view handling combined logic filtering
     function applyFilters() {
         const searchInput = document.getElementById('search').value.toUpperCase();
         const rows = document.getElementById('tableBody').getElementsByTagName('tr');
@@ -279,7 +279,10 @@
         btn.style.backgroundColor = "#9ca3af";
 
         try {
-            const response = await fetch('https://api.github.com/repos/pokemon-mezastar/mezastar-vn-id/dispatches', {
+            // REMINDER: Make sure to replace YOUR_SG_REPO_OWNER and YOUR_SG_REPO_NAME with your real project paths.
+            // Note: Publicly calling this endpoint directly requires setting up an authenticated gateway or proxy 
+            // since exposing GitHub tokens in plaintext frontend code presents security hazards.
+            const response = await fetch('https://api.github.com/repos/YOUR_SG_REPO_OWNER/YOUR_SG_REPO_NAME/dispatches', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/vnd.github+json',
